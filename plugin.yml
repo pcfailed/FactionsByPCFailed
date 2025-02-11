@@ -1,0 +1,55 @@
+name: Factions_Ultimate
+version: 1.0
+api-version: 1.17
+main: org.pcfailed.factions.Main
+description: A faction plugin to separate sides and bring war.
+authors: [PCFailed, Krishav SINGH]
+
+
+
+commands:
+   faction:
+      description: To manage factions.
+      usage: /faction [create|invite|query|power|list|leave|disband]   
+      aliases: [f, fac]
+      permission: pcfailed.factions.command.faction
+   facyes:
+      description: To accept faction requests.
+      permission: pcfailed.factions.command.facyes
+   facno:
+      description: To deny faction requests.
+      permission: pcfailed.factions.command.facno
+
+   fadmin:
+      description: Faction Admin for operators only.
+      usage : /fadmin [experimental|setid|setpower|disband]
+      permission: pcfailed.factions.command.fadmin
+  
+
+permissions:
+   pcfailed.factions:
+      children:
+         pcfailed.factions.command:
+            children:
+               pcfailed.factions.command.faction:
+                  default: true
+               pcfailed.factions.command.facyes:
+                   default: true
+               pcfailed.factions.command.facno:
+                  default: true
+               pcfailed.factions.command.fadmin:
+                  default: false
+         pcfailed.factions.ability:
+            children:
+                  pcfailed.factions.ability.speedhelmet:
+                     default: false
+                  pcfailed.factions.ability.aote:
+                     default: false
+                  pcfailed.factions.ability.effectstick:
+                     default: false
+                  pcfailed.factions.ability.effectstick2:
+                     default: false
+                  pcfailed.factions.ability.multihelmet:
+                     default: false
+                  pcfailed.factions.ability.fbsword:
+                     default: false
